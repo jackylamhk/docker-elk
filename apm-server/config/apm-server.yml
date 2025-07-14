@@ -1,0 +1,19 @@
+# max_procs: 4
+apm-server:
+  host: 0.0.0.0:8200
+  rum:
+    enabled: true
+    source_mapping:
+      elasticsearch:
+        hosts: [elasticsearch:9200]
+        username: elastic
+        password: ${ELASTIC_PASSWORD}
+  agent.config:
+    elasticsearch:
+      hosts: [elasticsearch:9200]
+      username: elastic
+      password: ${ELASTIC_PASSWORD}
+output.elasticsearch:
+  hosts: [elasticsearch:9200]
+  username: elastic
+  password: ${ELASTIC_PASSWORD}
